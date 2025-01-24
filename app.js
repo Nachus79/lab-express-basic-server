@@ -62,11 +62,20 @@ app.get('/api/articles', (req, res) => {
     res.json(articles);
 }); 
 
+//Iteration 7 (podemos probar el error con http://localhost:5005/hello)
+
+app.use((req, res, next) => {
+
+    res.status(404).sendFile(__dirname + '/views/not-found.html'); 
+
+})
+
+
+
 // START THE SERVER
 // Make your Express server listen on port 5005:
 
 app.listen(5005, () => console.info("Server listening at port 5005"));
-
 
 
 
