@@ -21,9 +21,14 @@ app.use(morgan("dev"));
 // ROUTES
 // Start defining your routes here:
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => { //Iteración 3
 
     res.sendFile(__dirname + '/views/home.html');
+}); 
+
+app.get('/blog', (req, res) => { //Iteración 4
+
+    res.sendFile(__dirname + '/views/blog.html');
 }); 
 
 
@@ -34,7 +39,14 @@ app.get('/', (req, res) => {
 app.listen(5005, () => console.info("Server listening at port 5005"));
 
 
+Create a route GET /api/projects that responds back with the JSON data from the file data/projects.json.
+The purpose of this route is to provide the JSON data for the home.html page, which requests and renders it in the My Projects section as a list.
 
+You will need to import the file data/projects.json in app.js.
+
+
+To test the route, navigate to localhost:5005/api/projects in your browser.
+If you set up the route correctly, you should see the JSON data with projects sent in the response.
 
 
 
